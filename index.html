@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c2b">
+  <meta name="description" content="Assessoria da Sá Moraes Engenharia para obtenção e renovação de AVCB em Pernambuco. Comece pelo chatbot ou fale diretamente no WhatsApp.">
+  <title>AVCB em Pernambuco | Sá Moraes Engenharia</title>
+  <link rel="icon" href="assets/logo-oficial.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#101c2b;--navy2:#192b3f;--gold:#ffce36;--white:#fff;--pale:#f3f4f2;--ink:#14283c;--muted:#536272}
+    *,*::before,*::after{box-sizing:border-box}
+    /* ===== TELA ÚNICA: a página ocupa exatamente a altura da janela ===== */
+    html,body{height:100%}
+    body{margin:0;background:var(--navy);color:var(--white);font:400 16px/1.6 Inter,Arial,sans-serif;
+      height:100vh;height:100svh;display:flex;flex-direction:column;overflow:hidden}
+    ::selection{background:var(--gold);color:var(--navy)}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    a{color:inherit;text-underline-offset:4px}
+    img{display:block;max-width:100%}
+    h1,h2,p{margin-top:0}
+    .wrap{width:min(100% - 48px,1180px);margin-inline:auto}
+    .skip{position:absolute;left:16px;top:-100px;z-index:20;background:var(--gold);color:var(--navy);padding:10px 16px}
+    .skip:focus{top:8px}
+    .site-header{flex:none;border-bottom:1px solid rgba(255,255,255,.17);background:var(--navy)}
+    .header-inner{height:clamp(52px,9vh,84px);display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:block;min-width:0}
+    .brand picture{display:block}
+    .brand img{display:block;height:clamp(22px,4.4vh,40px);width:auto;max-width:min(620px,58vw)}
+    .official{display:inline-flex;align-items:center;min-height:42px;padding:7px 0;color:#d2dce4;font:600 .92rem 'Barlow Semi Condensed',Arial,sans-serif;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.6)}
+    .official:hover{color:var(--gold);border-color:var(--gold)}
+    main{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+    .hero{flex:1 1 auto;min-height:0;position:relative;overflow:hidden;background:var(--navy)}
+    .hero::before{content:"";position:absolute;inset:0 0 0 52%;opacity:.32;background:linear-gradient(90deg,transparent 49.8%,#4a6072 50%,transparent 50.2%) 0 0/88px 100%,linear-gradient(0deg,transparent 49.8%,#4a6072 50%,transparent 50.2%) 0 0/100% 88px;pointer-events:none}
+    .hero-inner{position:relative;height:100%;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);align-items:center}
+    .hero-copy{position:relative;z-index:2;max-width:710px;padding:clamp(12px,3vh,40px) 0}
+    h1,h2,.button,.caption,.service-list{font-family:'Barlow Semi Condensed',Arial,sans-serif}
+    /* fonte limitada pela largura E pela altura da janela */
+    h1{font-size:clamp(2rem,min(6.1vw,8.4vh),5.6rem);font-weight:700;line-height:1.02;letter-spacing:-.025em;text-wrap:balance;margin-bottom:clamp(10px,2.6vh,28px)}
+    h1 span{color:var(--gold)}
+    .lead{max-width:560px;color:#e0e5e9;font-size:clamp(.95rem,2.1vh,1.16rem);line-height:1.5;margin-bottom:clamp(12px,3.2vh,35px)}
+    .actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:clamp(44px,6.4vh,55px);padding:10px 21px;border:2px solid transparent;border-radius:5px;text-decoration:none;text-align:center;text-transform:uppercase;letter-spacing:.025em;font-size:1.02rem;font-weight:700;transition:background-color .18s,color .18s,border-color .18s,transform .18s}
+    .button:hover{transform:translateY(-2px)}
+    .button:active{transform:translateY(0)}
+    .button-primary{background:var(--gold);color:var(--navy)}
+    .button-primary:hover{background:#ffe275}
+    .button-secondary{border-color:#d3dce3;color:var(--white)}
+    .button-secondary:hover{border-color:var(--gold);color:var(--gold)}
+    .button svg{width:18px;height:18px;flex:none}
+    .note{max-width:510px;margin:clamp(8px,1.8vh,18px) 0 0;color:#b9c6d1;font-size:.8rem;line-height:1.45}
+    /* foto acompanha a altura disponível do hero */
+    .portrait{--bleed:min(10vw,calc((100vw - min(100vw - 48px,1180px)) / 2));position:relative;height:100%;min-height:0;display:flex;align-items:flex-end;justify-content:center;min-width:0;align-self:stretch}
+    .portrait::before{content:"";position:absolute;bottom:0;left:0;right:calc(-1 * var(--bleed));height:75%;background:linear-gradient(135deg,rgba(54,78,99,.62),rgba(16,28,43,0));border-top:1px solid rgba(255,255,255,.17)}
+    .portrait img{position:relative;width:auto;height:91%;max-height:100%;max-width:calc((100% + var(--bleed)) * .91);object-fit:contain;object-position:bottom;transform:translateX(calc(var(--bleed) / 2));filter:drop-shadow(-18px 14px 25px rgba(0,0,0,.2))}
+    .caption{position:absolute;right:0;bottom:clamp(10px,2.4vh,24px);z-index:1;padding:7px 12px;line-height:1.15;background:var(--gold);color:var(--navy);font-size:.9rem;font-weight:700;letter-spacing:.035em;text-transform:uppercase}
+    .service{flex:none;background:var(--pale);color:var(--ink)}
+    .service-inner{padding:clamp(10px,2.6vh,30px) 0;display:grid;grid-template-columns:1fr 1.7fr;gap:40px;align-items:center}
+    h2{font-size:clamp(1.2rem,min(2.6vw,3.6vh),2.3rem);font-weight:700;letter-spacing:-.015em;line-height:1.1;margin:0}
+    .service-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;list-style:none;margin:0;padding:0;font-size:clamp(1rem,2vh,1.18rem);font-weight:700;line-height:1.2}
+    .service-list li{border-top:3px solid var(--gold);padding-top:clamp(6px,1.2vh,12px)}
+    .service-list span{display:block;color:var(--muted);font:400 .8rem/1.4 Inter,Arial,sans-serif;margin-top:4px}
+    /* rodapé vira uma faixa fina (o logo já está no topo) */
+    footer{flex:none;background:#0b1623;color:#bdc9d2}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:clamp(6px,1.2vh,12px)}
+    .footer-inner p{font-size:.78rem;line-height:1.35;margin:0}
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+      h1{font-size:clamp(2rem,min(6vw,7vh),4.7rem)}
+      .service-inner{grid-template-columns:1fr;gap:clamp(8px,1.6vh,20px)}
+    }
+    /* ===== CELULAR: texto em cima, foto preenche o espaço que sobrar ===== */
+    @media(max-width:680px){
+      .wrap{width:min(100% - 36px,520px)}
+      .brand img{height:clamp(22px,4.8vh,40px);max-width:60vw}
+      .official{font-size:.86rem;min-height:36px}
+      .hero::before{inset:auto 0 0 0;height:45%}
+      .hero-inner{display:flex;flex-direction:column;align-items:stretch}
+      .hero-copy{flex:none;padding:clamp(10px,2.6vh,28px) 0 0}
+      h1{font-size:clamp(1.75rem,min(9.4vw,5.4vh),3.4rem);margin-bottom:clamp(8px,1.6vh,18px)}
+      .lead{font-size:clamp(.85rem,2vh,1rem);margin-bottom:clamp(10px,2vh,22px)}
+      .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+      .button{min-height:clamp(42px,6vh,50px);padding:8px 10px;font-size:clamp(.8rem,3.6vw,.96rem);gap:7px}
+      .button svg{width:16px;height:16px}
+      .note{font-size:.72rem;margin-top:8px}
+      .portrait{flex:1 1 auto;height:auto;margin-top:clamp(6px,1.4vh,16px)}
+      .portrait::before{left:-18px;right:-18px;height:72%}
+      .portrait img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:97%;max-width:89%;object-position:bottom}
+      .caption{bottom:10px;font-size:.74rem;padding:5px 9px}
+      .service-inner{gap:6px}
+      h2{font-size:clamp(1rem,2.4vh,1.3rem)}
+      .service-list{gap:10px;font-size:clamp(.82rem,3.8vw,1rem)}
+      .service-list li{border-top-width:2px}
+      .service-list span{font-size:.7rem;line-height:1.3;margin-top:2px}
+      .footer-inner p{font-size:.7rem}
+    }
+    @media(max-width:390px){
+      .wrap{width:min(100% - 28px,360px)}
+      .service-list span{display:none}
+      .footer-inner .copy-extra{display:none}
+    }
+    /* telas muito baixas (celular deitado, janelas pequenas): libera o scroll para não cortar conteúdo */
+    @media(max-height:500px),(max-width:680px) and (max-height:560px){
+      body{height:auto;min-height:100svh;overflow:auto}
+      .hero{flex:none}
+      .hero-inner{height:auto;min-height:360px}
+      .portrait img{position:relative;left:auto;transform:none;height:auto;max-height:340px}
+    }
+    /* telas baixas: esconde elementos secundários primeiro */
+    @media(max-height:700px){.note{display:none}}
+    @media(max-width:680px) and (max-height:760px){.service-list span{display:none}.caption{display:none}}
+    @media(prefers-reduced-motion:reduce){.button{transition:none}.button:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#conteudo" aria-label="Sá Moraes Engenharia — início"><picture><source media="(min-width: 681px)" srcset="assets/logo-sme-desktop.svg" width="875" height="54"><img src="assets/logo-sme.svg" width="536" height="54" alt="Sá Moraes Engenharia"></picture></a>
+      <a class="official" href="https://samoraesengenharia.com.br/" target="_blank" rel="noopener noreferrer">Site oficial ↗</a>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1 id="titulo">Assessoria para obter ou renovar o <span>AVCB em Pernambuco.</span></h1>
+          <p class="lead">A Sá Moraes avalia a edificação, orienta a documentação e acompanha o processo junto ao Corpo de Bombeiros.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://wa.me/5581997460029?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20obten%C3%A7%C3%A3o%20ou%20renova%C3%A7%C3%A3o%20de%20AVCB%20em%20Pernambuco."><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg>Falar no WhatsApp</a>
+            <a class="button button-secondary" href="chatbot.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="3"/><path d="M8 19v2m8-2v2M8 10h.01M16 10h.01M8 14c2.5 2 5.5 2 8 0"/></svg>Usar o chatbot</a>
+          </div>
+          <p class="note">O chatbot oferece orientação inicial. A definição técnica depende da análise do seu caso.</p>
+        </div>
+        <div class="portrait"><img src="assets/foto_victor2-busto.webp" width="815" height="830" alt="Victor Moraes, engenheiro e sócio da Sá Moraes Engenharia" fetchpriority="high"><span class="caption">Victor Moraes<br>direção técnica</span></div>
+      </div>
+    </section>
+    <section class="service" aria-labelledby="servico-titulo">
+      <div class="wrap service-inner">
+        <h2 id="servico-titulo">Do diagnóstico ao acompanhamento técnico.</h2>
+        <ul class="service-list">
+          <li>Avaliação<span>da situação da edificação</span></li>
+          <li>Documentação<span>e adequações necessárias</span></li>
+          <li>Processo<span>acompanhado junto ao CBMPE</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><p>Assessoria para AVCB em Pernambuco.</p><p>© 2026 Sá Moraes Engenharia<span class="copy-extra">. Todos os direitos reservados</span>.</p></div></footer>
+</body>
+</html>
